@@ -29,15 +29,14 @@ var FILES = {
     js:   ['https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.js'],
     css:  ['https://api.tiles.mapbox.com/mapbox-gl-js/v0.31.0/mapbox-gl.css'],
   },
-
   turf: {
     js:   ['https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'],
     css:  []
   },
 
   directions: {
-    js:   ['https://api.tiles.mapbox.com/mapbox.js/plugins/mapbox-directions.js/v0.4.0/mapbox.directions.js'],
-    css:  ['https://api.tiles.mapbox.com/mapbox.js/plugins/mapbox-directions.js/v0.4.0/mapbox.directions.css']
+    js: ['https://api.tiles.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.0.3/mapbox-gl-directions.js'],
+    css:  ['https://api.tiles.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v3.0.3/mapbox-gl-directions.css']
   },
 
   zoomslider: {
@@ -126,7 +125,9 @@ Mapbox = {
 
     var opts = opts || {};
     var plugins = opts.plugins || [];
+    console.log(plugins);
     var initialFiles = opts.gl ? FILES.mapboxgl : FILES.mapbox;
+
 
     loadFiles(initialFiles, _.partial(onMapboxLoaded, plugins, onLoaded));
   },
